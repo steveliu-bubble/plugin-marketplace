@@ -416,7 +416,7 @@
         "type": "local",
         "path": "./external_plugins/bubble"
       },
-      "homepage": "https://bubble.io",
+      "homepage": "https://manual.bubble.io/help-guides/ai/bubble-mcp",
       "keywords": ["bubble.io", "bubble app", "bubble editor", "bubble mcp"],
       "domains": ["bubble.io", "bubbleapps.io"]
     }

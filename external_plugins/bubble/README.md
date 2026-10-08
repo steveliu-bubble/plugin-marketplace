@@ -3,6 +3,7 @@
 Connect Grok Build to [Bubble](https://bubble.io), the visual app builder. Grok can
 read and edit your Bubble apps through Bubble's hosted MCP server: pages, elements,
 workflows, data types, privacy rules, styles, plugins, and API Connector calls.
+See Bubble's [MCP guide](https://manual.bubble.io/help-guides/ai/bubble-mcp) for more.
 
 ## Installation
 
