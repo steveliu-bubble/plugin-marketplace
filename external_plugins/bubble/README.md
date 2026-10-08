@@ -58,9 +58,14 @@ Network endpoints:
 - `https://bubble.io/api/1.1/oauth/authorize`, `/access_token`, `/revoke`: OAuth 2.1 with PKCE
 - `https://bubble.io`: human sign-in and consent screen
 
-Credentials: a Bubble account. On first connect, Bubble asks you to approve listing
-and creating apps, reading and editing app code, reading test and live logs, reading
-and writing the test database, installing plugins, and creating and managing branches.
+Credentials: a Bubble account. On first connect, Bubble's consent page asks you to
+approve two groups of permissions:
+
+- **Read:** see your apps' names and descriptions, read from the editor, read test
+  and live data, and view development and live logs.
+- **Write:** create apps, edit apps and their test data, create and delete branches,
+  and install free plugins.
+
 The access token is sent as `Authorization: Bearer` on `/mcp`; no API key is stored in
 the plugin.
 
