@@ -1,0 +1,69 @@
+# Bubble plugin for Grok Build
+
+Connect Grok Build to [Bubble](https://bubble.io), the visual app builder. Grok can
+read and edit your Bubble apps through Bubble's hosted MCP server: pages, elements,
+workflows, data types, privacy rules, styles, plugins, and API Connector calls.
+
+## Installation
+
+In Grok Build, open `/plugin`, search for **Bubble**, and install.
+
+On first connection, Grok opens Bubble's sign-in in your browser. Approve access with
+the Bubble account whose apps you want Grok to work on. No API key is needed and
+nothing should be pasted into chat.
+
+## What you get
+
+**MCP server** `bubble` at `https://mcp.bubble.io/mcp` (Streamable HTTP, OAuth 2.1),
+with about 100 tools:
+
+| Area | Tools |
+|---|---|
+| Apps and versions | `list_apps`, `create_app`, `get_app_outline`, `get_node`, `get_versions`, `create_branch`, `get_preview_link` |
+| Design | `create_page`, `create_element`, `set_element_properties`, `move_element`, styles, color and font tokens, conditionals |
+| Workflows | `create_event`, `create_action`, `set_workflow_item_properties`, `reorder_actions` |
+| Data | `create_data_type`, `create_field`, privacy rules, option sets, `search_things` and `create_thing` on the test database |
+| Plugins and APIs | `search_plugins`, `install_plugin`, API Connector collections and calls |
+| Safety | `apply_changes` (one undo entry per batch), `undo`, `create_savepoint`, `restore_savepoint`, `check_app_issues` |
+
+Every tool carries MCP annotations (`readOnlyHint`, `destructiveHint`), so Grok can
+tell a lookup from an edit before calling it. Tools act only on apps the signed-in
+user can already access in Bubble.
+
+## Example prompts
+
+- "List my Bubble apps."
+- "Show me the pages and data types in my app `my-app`."
+- "Add a sign-up form to the index page of `my-app`."
+- "Create a Project data type with a name and a due date."
+- "When the Save button is clicked, create a new Project from the inputs."
+
+## Authentication and network
+
+The plugin connects to `https://mcp.bubble.io`. Authentication is OAuth 2.1
+authorization code with PKCE against Bubble's authorization server at
+`https://bubble.io`; Grok handles the flow.
+
+Bubble identifies OAuth clients by a client metadata document URL instead of dynamic
+client registration, so `.mcp.json` sets `oauth.clientId` to the document Bubble
+hosts for Grok Build. The document names Grok Build and allows only loopback redirects
+to `http://127.0.0.1/callback`.
+
+Network endpoints:
+
+- `https://mcp.bubble.io/mcp`: hosted MCP (Streamable HTTP)
+- `https://mcp.bubble.io/.well-known/oauth-protected-resource`: discovery metadata
+- `https://mcp.bubble.io/oauth/clients/grok-build.json`: this plugin's OAuth client metadata document
+- `https://bubble.io/.well-known/oauth-authorization-server`: authorization server metadata
+- `https://bubble.io/api/1.1/oauth/authorize`, `/access_token`, `/revoke`: OAuth 2.1 with PKCE
+- `https://bubble.io`: human sign-in and consent screen
+
+Credentials: a Bubble account. On first connect, Bubble asks you to approve listing
+and creating apps, reading and editing app code, reading test and live logs, reading
+and writing the test database, installing plugins, and creating and managing branches.
+The access token is sent as `Authorization: Bearer` on `/mcp`; no API key is stored in
+the plugin.
+
+## License
+
+Proprietary. Use of the hosted MCP server is governed by Bubble's terms of service.

@@ -407,6 +407,18 @@
       "homepage": "https://cal.com/docs/mcp-server",
       "keywords": ["cal.com", "calcom", "cal.com mcp", "cal.com scheduling", "cal.com booking"],
       "domains": ["cal.com", "app.cal.com", "mcp.cal.com", "api.cal.com"]
+    },
+    {
+      "name": "bubble",
+      "description": "Build and edit Bubble apps through Bubble's hosted MCP server: pages, elements, workflows, data types, privacy rules, styles, plugins, and API Connector calls. Sign in with your Bubble account; no API key needed.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./external_plugins/bubble"
+      },
+      "homepage": "https://bubble.io",
+      "keywords": ["bubble.io", "bubble app", "bubble editor", "bubble mcp"],
+      "domains": ["bubble.io", "bubbleapps.io"]
     }
   ]
 }

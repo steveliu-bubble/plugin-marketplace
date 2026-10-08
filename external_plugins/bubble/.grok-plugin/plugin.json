@@ -1,0 +1,12 @@
+{
+  "name": "bubble",
+  "version": "1.0.0",
+  "description": "Build and edit Bubble apps from Grok Build through Bubble's hosted MCP server at mcp.bubble.io: pages, elements, workflows, data types, styles, plugins, and API calls. Sign in with your Bubble account on first connect.",
+  "author": {
+    "name": "Bubble",
+    "url": "https://bubble.io"
+  },
+  "homepage": "https://bubble.io",
+  "license": "Proprietary",
+  "keywords": ["bubble.io", "bubble app", "bubble editor", "bubble mcp"]
+}
