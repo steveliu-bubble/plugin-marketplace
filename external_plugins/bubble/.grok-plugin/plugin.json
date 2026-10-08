@@ -8,5 +8,6 @@
   },
   "homepage": "https://bubble.io",
   "license": "Proprietary",
-  "keywords": ["bubble.io", "bubble app", "bubble editor", "bubble mcp"]
+  "keywords": ["bubble.io", "bubble app", "bubble editor", "bubble mcp"],
+  "logo": "assets/logo.svg"
 }
