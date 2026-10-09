@@ -1,8 +1,8 @@
 # Bubble plugin for Grok Build
 
-Connect Grok Build to [Bubble](https://bubble.io), the visual app builder. Grok can
-read and edit your Bubble apps through Bubble's hosted MCP server: pages, elements,
-workflows, data types, privacy rules, styles, plugins, and API Connector calls.
+Connect Grok to your [Bubble](https://bubble.io) apps and build by describing what you
+want. Grok can read your app's structure (pages, reusables, data types, option sets,
+styles, and workflows) and make changes the same way the Bubble editor does.
 See Bubble's [MCP guide](https://manual.bubble.io/help-guides/ai/bubble-mcp) for more.
 
 ## Installation
@@ -13,23 +13,24 @@ On first connection, Grok opens Bubble's sign-in in your browser. Approve access
 the Bubble account whose apps you want Grok to work on. No API key is needed and
 nothing should be pasted into chat.
 
-## What you get
+## What you can do
 
-**MCP server** `bubble` at `https://mcp.bubble.io/mcp` (Streamable HTTP, OAuth 2.1),
-with about 100 tools:
+- **Design:** create and move elements, set properties, apply styles and color/font
+  variables, and add conditionals and custom states.
+- **Logic:** create workflow events and actions, reorder steps, and validate
+  expressions before writing them.
+- **Data:** define data types, fields, option sets, and privacy rules; create, search,
+  and update records through your app's Data API.
+- **Integrations:** set up API Connector calls and install marketplace plugins.
+- **Safety:** app edits are undoable, and you can create savepoints, work on
+  development branches, and run issue checks across the whole app.
 
-| Area | Tools |
-|---|---|
-| Apps and versions | `list_apps`, `create_app`, `get_app_outline`, `get_node`, `get_versions`, `create_branch`, `get_preview_link` |
-| Design | `create_page`, `create_element`, `set_element_properties`, `move_element`, styles, color and font tokens, conditionals |
-| Workflows | `create_event`, `create_action`, `set_workflow_item_properties`, `reorder_actions` |
-| Data | `create_data_type`, `create_field`, privacy rules, option sets, `search_things` and `create_thing` on the test database |
-| Plugins and APIs | `search_plugins`, `install_plugin`, API Connector collections and calls |
-| Safety | `apply_changes` (one undo entry per batch), `undo`, `create_savepoint`, `restore_savepoint`, `check_app_issues` |
+Grok can also generate preview links so you can see changes in run mode immediately.
 
-Every tool carries MCP annotations (`readOnlyHint`, `destructiveHint`), so Grok can
-tell a lookup from an edit before calling it. Tools act only on apps the signed-in
-user can already access in Bubble.
+The plugin adds one MCP server, `bubble`, at `https://mcp.bubble.io/mcp` (Streamable
+HTTP, OAuth 2.1). Every tool carries MCP annotations (`readOnlyHint`,
+`destructiveHint`), so Grok can tell a lookup from an edit before calling it. Tools act
+only on apps the signed-in user can already access in Bubble.
 
 ## Example prompts
 
