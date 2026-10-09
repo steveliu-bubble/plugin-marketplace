@@ -417,7 +417,7 @@
         "path": "./external_plugins/bubble"
       },
       "homepage": "https://manual.bubble.io/help-guides/ai/bubble-mcp",
-      "keywords": ["bubble.io", "bubble app", "bubble editor", "bubble mcp", "bubble no-code", "bubble workflow", "bubble backend workflow", "bubble plugin", "bubble page", "bubble element", "bubble data type", "bubble database", "bubble api", "bubble repeating group", "bubble workload units"],
+      "keywords": ["bubble.io", "bubble io", "bubble app", "bubble editor", "bubble mcp", "bubble no-code", "bubble workflow", "bubble backend workflow", "bubble plugin", "bubble page", "bubble element", "bubble data type", "bubble database", "bubble api", "bubble repeating group", "bubble workload units"],
       "domains": ["bubble.io", "bubbleapps.io"]
     }
   ]
