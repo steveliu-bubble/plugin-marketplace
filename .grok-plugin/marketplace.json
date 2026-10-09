@@ -410,7 +410,7 @@
     },
     {
       "name": "bubble",
-      "description": "Build and edit Bubble apps through Bubble's hosted MCP server: pages, elements, workflows, data types, privacy rules, styles, plugins, and API Connector calls. Sign in with your Bubble account; no API key needed.",
+      "description": "Build and edit your Bubble apps with Grok: pages, elements, workflows, data types, and records, straight into your editor.",
       "category": "development",
       "source": {
         "type": "local",
